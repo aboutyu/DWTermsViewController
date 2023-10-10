@@ -20,7 +20,11 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "DWTermsViewController",
-            dependencies: []),
+            dependencies: [],
+            resources: [
+                // This will process the /Sources/MyLibrary/Resources directory.
+                .process("Resources")
+            ]),
         .testTarget(
             name: "DWTermsViewControllerTests",
             dependencies: ["DWTermsViewController"]),
