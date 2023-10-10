@@ -17,7 +17,7 @@ open class DWTermsViewController: UIViewController {
     
     private lazy var button: UIButton = {
         let button = UIButton()
-        button.setImage(self.icon, for: .normal)
+        button.setImage(UIImage(named: "closed", bundle: Bundle.module, compatibleWith: nil), for: .normal)
         button.backgroundColor = .clear
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(closeTapped), for: .touchUpInside)
@@ -85,7 +85,6 @@ open class DWTermsViewController: UIViewController {
     private var selectedItem: Int = 0
     private var isTitleHide: Bool = false
     private var menuFont: UIFont = UIFont.systemFont(ofSize: 17)
-    private var closedIcon: UIImage?
     
     private let headerHeight: CGFloat = 40.0
     private var menuInsets: CGFloat = 12.0
@@ -93,14 +92,7 @@ open class DWTermsViewController: UIViewController {
     private var selectedColor: UIColor?
     private var diselectedColor: UIColor?
     
-    private var icon: UIImage? = {
-        if let icon = self.closedIcon {
-            return icon
-        }
-        return UIImage(named: "closed", bundle: Bundle.module, compatibleWith: nil)
-    }()
-    
-    public init(_ items: [THTermsEntity], startedItem: Int? = nil, menuInsets: CGFloat? = nil, font: UIFont? = nil, selectedColor: UIColor? = nil, diselectedColor: UIColor? = nil, isTitleHide: Bool = false, closedIcon: UIImage? = nil) {
+    public init(_ items: [THTermsEntity], startedItem: Int? = nil, menuInsets: CGFloat? = nil, font: UIFont? = nil, selectedColor: UIColor? = nil, diselectedColor: UIColor? = nil, isTitleHide: Bool = false) {
         self.items = items
         if let started = startedItem {
             self.startedItem = started
@@ -114,7 +106,6 @@ open class DWTermsViewController: UIViewController {
         }
         
         self.isTitleHide = isTitleHide
-        self.closedIcon = closedIcon
         self.diselectedColor = diselectedColor
         self.selectedColor = selectedColor
         
