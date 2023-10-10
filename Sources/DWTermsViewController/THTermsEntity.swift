@@ -9,7 +9,7 @@ public struct THTermsEntity {
     var url: String
     var isEssestial: Bool
     
-    init(name: String, url: String, isEssential: Bool = true) {
+    public init(name: String, url: String, isEssential: Bool = true) {
         self.name = name
         self.url = url
         self.isEssestial = isEssential

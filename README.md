@@ -7,7 +7,7 @@
 # Installation
 
 #### Swift Package Manager
-Simply add THSegmentControl to your `Package Dependancies`.
+Simply add DWTermsViewController to your `Package Dependancies`.
 
 Add only url 'https://github.com/aboutyu/DWTermsViewController.git' into Package Dependancies
 
