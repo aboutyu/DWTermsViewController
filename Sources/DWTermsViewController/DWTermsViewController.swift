@@ -17,7 +17,7 @@ open class DWTermsViewController: UIViewController {
     
     private lazy var button: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(named: "closed"), for: .normal)
+        button.setImage(UIImage(named: "closed", bundle: Bundle.module, compatibleWith: nil), for: .normal)
         button.backgroundColor = .clear
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(closeTapped), for: .touchUpInside)
