@@ -88,11 +88,12 @@ open class DWTermsViewController: UIViewController {
     
     private let headerHeight: CGFloat = 40.0
     private var menuInsets: CGFloat = 12.0
+    private var bottomLineHeight: CGFloat = 1.0
     
     private var selectedColor: UIColor?
     private var diselectedColor: UIColor?
     
-    public init(_ items: [THTermsEntity], startedItem: Int? = nil, menuInsets: CGFloat? = nil, font: UIFont? = nil, selectedColor: UIColor? = nil, diselectedColor: UIColor? = nil, isTitleHide: Bool = false) {
+    public init(_ items: [THTermsEntity], startedItem: Int? = nil, menuInsets: CGFloat? = nil, bottomLineHeight: CGFloat? = nil, font: UIFont? = nil, selectedColor: UIColor? = nil, diselectedColor: UIColor? = nil, isTitleHide: Bool = false) {
         self.items = items
         if let started = startedItem {
             self.startedItem = started
@@ -100,6 +101,9 @@ open class DWTermsViewController: UIViewController {
         }
         if let insets = menuInsets {
             self.menuInsets = insets
+        }
+        if let lineHeight = bottomLineHeight {
+            self.bottomLineHeight = lineHeight
         }
         if let font = font {
             self.menuFont = font
@@ -206,7 +210,7 @@ extension DWTermsViewController: UICollectionViewDataSource {
         cell.diSelectedColor = self.diselectedColor
         cell.name = self.items[row].name
         cell.font = self.menuFont
-        cell.bottomLineHeight = 1.2
+        cell.bottomLineHeight = self.bottomLineHeight
         cell.reload(self.selectedItem)
         
         return cell
