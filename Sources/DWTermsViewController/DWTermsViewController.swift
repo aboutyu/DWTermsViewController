@@ -183,7 +183,7 @@ open class DWTermsViewController: UIViewController {
     }
 }
 
-extension THTermsViewController: UICollectionViewDelegateFlowLayout {
+extension DWTermsViewController: UICollectionViewDelegateFlowLayout {
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let name: String = self.items[indexPath.item].name
         let width: CGFloat = name.size(withAttributes: [NSAttributedString.Key.font : self.menuFont]).width
@@ -192,7 +192,7 @@ extension THTermsViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-extension THTermsViewController: UICollectionViewDataSource {
+extension DWTermsViewController: UICollectionViewDataSource {
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.items.count
     }
